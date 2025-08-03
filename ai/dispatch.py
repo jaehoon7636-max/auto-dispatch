@@ -1,5 +1,3 @@
-import sys
-import json
 from geopy.distance import geodesic
 
 def assign_driver(order, drivers):
@@ -17,10 +15,3 @@ def assign_driver(order, drivers):
             best_driver = driver
 
     return best_driver
-
-if __name__ == '__main__':
-    input_data = json.loads(sys.stdin.read())
-    order = input_data['order']
-    drivers = input_data['drivers']
-    result = assign_driver(order, drivers)
-    print(json.dumps(result))
